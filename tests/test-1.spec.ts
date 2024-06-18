@@ -13,17 +13,17 @@ test('login', async ({ page},testInfo) => {
   await page.waitForTimeout(2000)
   await expect(result).toBeVisible()
   //await page.screenshot({path : "screenshot/login.png",fullPage: true })
-  await testInfo.attach('login ', {
-   body: await page.screenshot(),
-   contentType : 'image/png'
+  // await testInfo.attach('login ', {
+  //  body: await page.screenshot(),
+  //  contentType : 'image/png'
 
-  })
-  await page.pause()
+  // })
+ // await page.pause()
 });
 
 test('login 2', async ({ page }) => {
 
-  await page.goto('http://192.168.1.115:3000/');
+  await page.goto(process.env.URL);
   await page.waitForTimeout(2000)
   const login = new LoginPage(page)
   await login.SignUp("lorenzolinbce@gmail.com", "123456")
@@ -40,7 +40,7 @@ test('login 2', async ({ page }) => {
 
 test('login dashboard', async ({ page }) => {
 
-  await page.goto('http://192.168.1.115:3000/');
+  await page.goto(process.env.URL);
   await page.waitForTimeout(2000)
   const login = new LoginPage(page)
   await login.SignUp("lorenzolinbce@gmail.com", "123456")
@@ -65,7 +65,7 @@ test('login dashboard', async ({ page }) => {
 
 test('login paises', async ({ page }) => {
 
-  await page.goto('http://192.168.1.115:3000/');
+  await page.goto(process.env.URL);
   await page.waitForTimeout(2000)
   const login = new LoginPage(page)
   await login.SignUp("lorenzolinbce@gmail.com", "123456")
